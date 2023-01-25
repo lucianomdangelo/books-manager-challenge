@@ -6,7 +6,7 @@ from app.database.dbbase import engine, Base
 Base.metadata.create_all(bind=engine)
 
 # Init API
-app = FastAPI()
+app = FastAPI(title="Books API")
 
 # Add routes
 app.include_router(main_router.router)
