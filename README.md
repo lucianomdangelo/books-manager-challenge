@@ -1,24 +1,26 @@
-# FOR TES
+Api for books and comments managment. Developed with Python, FastApi, Pytest, SQLALchemy, PostgreSQL, Docker Compose
 
-# TO START
-docker build . -t books-manager
-docker run --name books-manager-container -p 8000:8000/tcp books-manager
+## To run the unit tests
+```
+pytest
+```
 
-or run ./run_dockerfile.sh
+## To check the docker-compose config
+```
+docker-compose config
+```
 
-## TO RUN WITH PYTHON ENVIRONMENT
+## To run the compose
+```
+docker-compose up --build
+```
 
-# install virtualenv if it's not installed already
-pip install virtualenv 
+## To stop the compose and delete the volume
+```
+docker-compose down -v
+```
 
-# create the environment
-python3 -m venv books-manager-challenge
-
-# activate
-source books-manager-challenge/bin/activate
-
-# install dependencies
-pip3 install fastapi pydantic requests sqlalchemy
-
-# run the app
-uvicorn app.main:app --reload
+## OpenApi doc
+```
+127.0.0.1:8000
+```
