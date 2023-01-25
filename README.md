@@ -1,24 +1,19 @@
-Api for books and comments managment. Developed with Python, FastApi, Pytest, SQLALchemy, PostgreSQL, Docker Compose
+Api for books and comments managment. Developed with Python, FastApi, Pytest, SQLALchemy, Docker
 
 ## To run the unit tests
 ```
 pytest
 ```
 
-## To check the docker-compose config
+## To run the api
 ```
-docker-compose config
-```
-
-## To run the compose
-```
-docker-compose up --build
+docker build . -t books-manager
+docker run --name books-manager-container -p 8000:8000/tcp books-manager
 ```
 
-## To stop the compose and delete the volume
-```
-docker-compose down -v
-```
+## clean:
+docker stop books-manager-container
+docker rm books-manager-container
 
 ## OpenApi doc
 ```
